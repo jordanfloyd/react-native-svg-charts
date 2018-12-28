@@ -43,6 +43,7 @@ class PieChart extends PureComponent {
             children,
             startAngle,
             endAngle,
+            halfPie,
         } = this.props
 
         const { height, width } = this.state
@@ -132,7 +133,7 @@ class PieChart extends PureComponent {
                             {/* center the progress circle*/}
                             <G
                                 x={ width / 2 }
-                                y={ height / 2 }
+                                y={ halfPie ? height - 5 : height / 2 }
                             >
                                 {
                                     React.Children.map(children, child => {
